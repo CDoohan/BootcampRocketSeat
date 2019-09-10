@@ -1,2 +1,6 @@
 //Start Docker Database
 docker start database
+
+//Show all Containers
+docker ps -a
+
