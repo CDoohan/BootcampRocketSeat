@@ -1,4 +1,5 @@
 import User from "../models/User";
+import File from '../models/File';
 
 class ProviderController{
 
@@ -7,7 +8,12 @@ class ProviderController{
       where:{
         provider: true
       },
-      attributes:['id', 'email', 'name', 'avatar_id']
+      attributes:['id', 'email', 'name', 'avatar_id'],
+      include:[{
+        model: File,
+        as: 'avatar',
+        attributes: ['id', 'name', 'path', 'url']
+      }]
     });
 
     return res.json(providers);
