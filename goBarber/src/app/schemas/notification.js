@@ -12,7 +12,7 @@ const NotificationSchema = new mongoose.Schema({
   read: {
     type: Boolean,
     required: true,
-    deafult: false
+    default: false
   }
 },{
   timestamps: true
